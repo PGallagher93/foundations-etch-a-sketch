@@ -1,0 +1,36 @@
+
+.container {
+    display:flex;
+    
+    justify-content: center;
+}
+
+
+#gridContainer {
+    height:960px;
+    width:960px;
+    display:flex;
+    background-color: blueviolet;
+    flex-direction: column;
+     
+}
+.gridRow {
+    display:flex;
+    align-items: center;
+    background-color: blue;
+    justify-content: center;
+    flex: 1;
+    border:  0;
+    margin: 0;
+    
+}
+
+.gridSquare {
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    border-style: solid;
+    border-color: black;
+    flex: 1;
+    
+}
