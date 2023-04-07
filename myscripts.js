@@ -1,8 +1,17 @@
 function makeGrid () {
-    gridSize = parseInt(prompt("Enter a grid size between 1-100"));
-    while (isNaN(gridSize) || (gridSize < 1) || (gridSize > 100)){
-        gridSize = parseInt(prompt("Grid size must be a number between 1-100"));
+    sizePrompt =prompt("Enter a grid size between 1-100");
+    
+    if (sizePrompt === null){
+        return;
     }
+    
+    while (isNaN(parseInt(sizePrompt)) || (parseInt(sizePrompt) < 1) || (parseInt(sizePrompt) > 100)){
+        if (sizePrompt === null){
+            return;
+        }
+        sizePrompt = prompt("Grid size must be a number between 1-100");
+    }
+    gridSize = parseInt(sizePrompt);
 }
 
 
