@@ -1,3 +1,14 @@
+header {
+    font-family: Arial, Helvetica, sans-serif;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 100px;
+}
+
+
 
 .container {
     display:flex;
@@ -7,8 +18,8 @@
 
 
 #gridContainer {
-    height:960px;
-    width:960px;
+    height:480px;
+    width:480px;
     display:flex;
     background-color: blueviolet;
     flex-direction: column;
@@ -28,9 +39,12 @@
 .gridSquare {
     height: 100%;
     width: 100%;
-    background-color: red;
+    background-color: white;
     border-style: solid;
     border-color: black;
     flex: 1;
     
+}
+.coloredSquare {
+    background-color: black;
 }
