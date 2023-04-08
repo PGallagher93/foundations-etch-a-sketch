@@ -15,7 +15,7 @@
             console.log("box added");
         }
     }
-    //color the squares
+    //color the squares (maybe add this to a color button)
     const squares = document.querySelectorAll('.gridSquare');
     squares.forEach((square) => {
         square.addEventListener('mouseover', ()=> {
@@ -53,6 +53,15 @@ function resetGrid () {
     })
 }
 
+function erasureMode (){
+    const squares = document.querySelectorAll('.gridSquare');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', ()=> {
+            square.classList.remove('coloredSquare');
+        })
+    })
+}
+
 
 //load up the default grid size 
 window.onload = function (){
@@ -63,9 +72,13 @@ const sizeButton = document.querySelector('#gridSizeButton') ;
 sizeButton.addEventListener('click', makeGrid);
 
 //button for reseting the grid
-
 const resetButton = document.querySelector('#resetGridButton');
 resetButton.addEventListener('click',resetGrid );
+
+//button for erasure mode
+const erasureButton = document.querySelector('#erasureButton');
+erasureButton.addEventListener('click', erasureMode);
+
     
     
 
