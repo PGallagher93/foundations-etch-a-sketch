@@ -24,27 +24,34 @@
     })
     }
 
-    function makeGrid () {
-        sizePrompt =prompt("Enter a grid size between 1-64");
+function makeGrid () {
+    sizePrompt =prompt("Enter a grid size between 1-64");
         
-        if (sizePrompt === null){
-            return;
-        }
+    if (sizePrompt === null){
+         return;
+     }
         
-        while (isNaN(parseInt(sizePrompt)) || (parseInt(sizePrompt) < 1) || (parseInt(sizePrompt) > 64)){
+    while (isNaN(parseInt(sizePrompt)) || (parseInt(sizePrompt) < 1) || (parseInt(sizePrompt) > 64)){
             if (sizePrompt === null){
                 return;
             }
             sizePrompt = prompt("Grid size must be a number between 1-64");
+            }
+    gridSize = parseInt(sizePrompt);
+     //loop through current grid container and delete all grid squares
+    const gridContainer = document.querySelector("#gridContainer");
+    while (gridContainer.firstChild){
+        gridContainer.removeChild(gridContainer.lastChild);
         }
-        gridSize = parseInt(sizePrompt);
-        //loop through current grid container and delete all grid squares
-        const gridContainer = document.querySelector("#gridContainer");
-        while (gridContainer.firstChild){
-            gridContainer.removeChild(gridContainer.lastChild);
-        }
-        createGrid(sizePrompt)
+    createGrid(sizePrompt)
     }
+
+function resetGrid () {
+    squares = document.querySelectorAll(".gridSquare");
+    squares.forEach((square) => {
+        square.classList.remove('coloredSquare');
+    })
+}
 
 
 //load up the default grid size 
@@ -52,8 +59,13 @@ window.onload = function (){
     createGrid(16);
 }
 //allow the button to create the grid size
-const sizeButton = document.querySelector('#gridSize') ;
+const sizeButton = document.querySelector('#gridSizeButton') ;
 sizeButton.addEventListener('click', makeGrid);
+
+//button for reseting the grid
+
+const resetButton = document.querySelector('#resetGridButton');
+resetButton.addEventListener('click',resetGrid );
     
     
 

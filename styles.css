@@ -16,6 +16,11 @@ header {
     justify-content: center;
 }
 
+.buttonContainer {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
 
 #gridContainer {
     height:480px;
