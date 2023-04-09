@@ -72,6 +72,17 @@ function changeColor(){
     })
 }
 
+function randomColor(){
+    const squares = document.querySelectorAll('.gridSquare');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', ()=> {
+            //find random RGB value, the 16 makes it a hexadecimal string 
+            const color = Math.floor(Math.random ()*16777215).toString(16);
+            square.style.backgroundColor = "#" + color;
+        })
+    })
+}
+
 
 //load up the default grid size 
 window.onload = function (){
@@ -89,8 +100,13 @@ resetButton.addEventListener('click',resetGrid );
 const erasureButton = document.querySelector('#erasureButton');
 erasureButton.addEventListener('click', erasureMode);
 
+//button to change color
 const colorButton = document.querySelector('#whatColor');
 colorButton.addEventListener('click', changeColor);
+
+//button to randomise color
+const randomiseButton = document.querySelector('#randomiseColor');
+randomiseButton.addEventListener('click', randomColor);
 
 
     
