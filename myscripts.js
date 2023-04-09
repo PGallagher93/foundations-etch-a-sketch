@@ -19,7 +19,7 @@
     const squares = document.querySelectorAll('.gridSquare');
     squares.forEach((square) => {
         square.addEventListener('mouseover', ()=> {
-            square.classList.add('coloredSquare');
+            square.style.backgroundColor = "black";
         })
     })
     }
