@@ -49,7 +49,7 @@ function makeGrid () {
 function resetGrid () {
     squares = document.querySelectorAll(".gridSquare");
     squares.forEach((square) => {
-        square.classList.remove('coloredSquare');
+        square.style.backgroundColor = "white";
     })
 }
 
@@ -57,7 +57,17 @@ function erasureMode (){
     const squares = document.querySelectorAll('.gridSquare');
     squares.forEach((square) => {
         square.addEventListener('mouseover', ()=> {
-            square.classList.remove('coloredSquare');
+            square.style.backgroundColor = "white";
+        })
+    })
+}
+
+function changeColor(){
+    const color = document.querySelector('#colorChoice').value;
+    const squares = document.querySelectorAll('.gridSquare');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', ()=> {
+            square.style.backgroundColor = color;
         })
     })
 }
@@ -78,6 +88,10 @@ resetButton.addEventListener('click',resetGrid );
 //button for erasure mode
 const erasureButton = document.querySelector('#erasureButton');
 erasureButton.addEventListener('click', erasureMode);
+
+const colorButton = document.querySelector('#whatColor');
+colorButton.addEventListener('click', changeColor);
+
 
     
     
